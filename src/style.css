@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,900&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.55);
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.menu {
+    position: relative;
+    display: grid;
+    z-index: 5;
+    overflow: hidden;
+    width: 400px;
+}
+
+.menu>div {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.menu>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu>div>.menu-wrapper {
+    position: relative;
+    display: grid;
+    gap: 0.5rem;
+    text-transform: capitalize;
+    margin-top: -3rem;
+}
+
+.menu>div>.menu-wrapper>h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu>div>.menu-wrapper>.menu-button {
+    padding-inline: 1rem 1.6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+.menu>div>.menu-wrapper>.menu-button>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu>div>p {
+    margin-left: 1rem;
+    margin-block: 0.5rem;
+    width: fit-content;
+}
+
+.menu-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 1rem 1.6rem;
+}
+
+.menu-product>button {
+    position: relative;
+    display: grid;
+    place-content: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+    text-transform: capitalize;
+    width: 104px;
+    height: 31px;
+}
+
+.menu-product>button>span {
+    z-index: 2;
+    font-size: 1rem;
+}
+
+.menu-product>button>img {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.menu-clothes {
+    position: relative;
+}
+
+.menu-clothes>img {
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.menu-clothes>div {
+    position: absolute;
+    top: 0;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+    text-transform: capitalize;
+}
+
+.menu-clothes>div>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.menu-clothes>div>div>div:not(:last-child) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &>img:first-child {
+        margin-left: 0.5rem;
+    }
+
+    &>img:last-child {
+        margin-right: 0.5rem;
+    }
+}
+
+.menu-clothes>div>div:last-child>img {
+    width: 100%;
+}
+
+.menu-clothes>div>div>div:first-child {
+    margin-bottom: 0.5rem;
+}
+
+.menu-clothes>div>div>div:last-child {
+    position: absolute;
+    top: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+
+    &>div>img {
+        width: 41px;
+    }
+
+    .frame {
+        position: relative;
+        transform: translateX(0.07rem);
+
+        &::after,
+        &::before {
+            left: 0.5rem;
+            position: absolute;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        &:nth-child(1)::before {
+            top: -2rem;
+            content: "10x";
+        }
+
+        &:nth-child(2)::before {
+            top: -2rem;
+            content: "5x";
+        }
+
+        &:nth-child(1):after {
+            bottom: -1.5rem;
+            left: -0.3rem;
+            content: "Cotton";
+        }
+
+        &:nth-child(2):after {
+            bottom: -1.5rem;
+            left: -0.8rem;
+            content: "Wool Yarn";
+        }
+    }
+}
+
+.menu-footer-buttons {
+    display: grid;
+    gap: 1.5rem;
+
+    &>button {
+        position: relative;
+        display: grid;
+        place-content: center;
+
+        &>span {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+    }
+
+    &>button:nth-child(2) {
+        color: rgba(0, 0, 0, 0.32);
+    }
+
+    &>button:nth-child(3) {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.55);
+    }
+}
